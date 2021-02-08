@@ -1,0 +1,57 @@
+application {
+  config {
+    baseName gateway,
+    packageName com.jini.gateway,
+    applicationType gateway,
+    authenticationType jwt,
+    buildTool maven,
+    databaseType sql,
+    devDatabaseType h2Disk,
+    prodDatabaseType mysql,
+    serviceDiscoveryType eureka,
+    testFrameworks [protractor]
+  }
+  entities Position
+}
+
+application {
+  config {
+    baseName orderbook,
+    packageName com.jini.orderbook,
+    applicationType microservice,
+    authenticationType jwt,
+    buildTool maven,
+    databaseType sql,
+    devDatabaseType h2Disk,
+    prodDatabaseType mysql,
+    serverPort 8081,
+    serviceDiscoveryType eureka
+  }
+  entities Position
+}
+
+entity Position {
+  asset String required,
+  buyAt LocalDate,
+  sellAt LocalDate,
+  entryValue Double,
+  exitValue Double,
+  operationType OperationType required
+}
+enum OperationType {
+  SHORT,
+  LONG
+}
+
+service * with serviceImpl
+dto * with mapstruct
+
+// will be created under 'docker-compose/kubernetes' folder
+deployment {
+// deploymentType docker-compose
+  deploymentType kubernetes
+  appsFolders [gateway, orderbook]
+  dockerRepositoryName "orderbook"
+  consoleOptions [zipkin]
+}
+

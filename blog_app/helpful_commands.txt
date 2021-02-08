@@ -1,0 +1,75 @@
+========================
+JHISPTER - INSTALLATION
+========================
+Install Git  
+Install Node.js from the Node.js website (prefer an LTS version)
+Install Yeoman: npm install -g yo
+Install Bower: npm install -g bower
+Install Gulp: npm install -g gulp-cli
+Install JHipster: npm install -g generator-jhipster
+
+============================================
+MICROSERVICE & ZUUL GATEWAY - CODE CREATION
+============================================
+jhipster
+jhipster --force
+jhipster import-jdl blog_store.jdl
+jhipster export-jdl blog_store.jdl
+
+====================================
+JHIPSTER REGISTRY v6.6 INSTALLATION
+====================================
+git clone https://github.com/jhipster/jhipster-registry.git
+mvn package
+mvnw
+
+=======================
+EUREKA & CONFIG SERVER 
+=======================
+http://127.0.0.1:8761/
+admin:admin
+
+==============
+ZUUL GATEWAY
+==============
+http://127.0.0.1:8080/
+
+==============
+BROWSER SYSN
+==============
+yarn start
+
+=====================
+RESOLVING NPM ISSUE 
+=====================
+npm cache clean --force
+npm install -g @angular/cli@latest
+npm update
+npm i npm@latest -g
+yarn start
+
+===================================
+JHIPSTER DOCKER-COMPOSE GENERATOR
+===================================
+mkdir docker-compose
+cd docker-compose
+jhipster docker-compose
+
+If you forgot to generate the Docker image for this application, please run:
+To generate the missing Docker image(s), please run:
+  ./mvnw -ntp -Pprod verify jib:dockerBuild in D:\IBM\Workspace\STS\temp\jhipster\gateway
+  ./mvnw -ntp -Pprod verify jib:dockerBuild in D:\IBM\Workspace\STS\temp\jhipster\orderbook
+
+You can launch all your infrastructure by running : docker-compose up -d
+
+===================================
+JHIPSTER KUBERNETES GENERATOR
+===================================
+jhipster kubernetes
+
+================
+JHIPSTER CI-CD
+================
+https://www.jhipster.tech/setting-up-ci-jenkins2/
+jhipster ci-cd
+
