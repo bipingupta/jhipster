@@ -1,7 +1,6 @@
 ========================
 JHISPTER - INSTALLATION
 ========================
-
 Install Git  
 Install Node.js from the Node.js website (prefer an LTS version)
 Install Yeoman: npm install -g yo
@@ -12,6 +11,7 @@ Install JHipster: npm install -g generator-jhipster
 ============================================
 MICROSERVICE & ZUUL GATEWAY - CODE CREATION
 ============================================
+https://developer.okta.com/blog/2018/03/01/develop-microservices-jhipster-oauth
 jhipster
 jhipster --force
 jhipster import-jdl orderbook.jdl
@@ -20,7 +20,7 @@ jhipster export-jdl orderbook.jdl
 ====================================
 JHIPSTER REGISTRY v6.6 INSTALLATION
 ====================================
-git clone https://github.com/jhipster/jhipster-registry.git
+git clone https://github.com/jhipster/jhipster-registry.git registry
 mvn package
 mvnw
 

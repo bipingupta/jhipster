@@ -19,7 +19,7 @@ jhipster export-jdl blog_store.jdl
 ====================================
 JHIPSTER REGISTRY v6.6 INSTALLATION
 ====================================
-git clone https://github.com/jhipster/jhipster-registry.git
+git clone https://github.com/jhipster/jhipster-registry.git registry
 mvn package
 mvnw
 
